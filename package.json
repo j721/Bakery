@@ -16,5 +16,12 @@
   "bugs": {
     "url": "https://github.com/j721/Bakery/issues"
   },
-  "homepage": "https://github.com/j721/Bakery#readme"
+  "homepage": "https://github.com/j721/Bakery#readme",
+  "devDependencies": {
+    "nodemon": "^2.0.5"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.17.1"
+  }
 }
