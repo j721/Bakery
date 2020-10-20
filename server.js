@@ -14,9 +14,9 @@ const {
 const app = express();
 
 const schema = buildSchema(
-  `
-     type Query{
-      users: User
+  ` 
+    type Query{
+      users: [User!]! //object User cannot be null, as well as the list of users can not be null (User's array cannot hold any null values)
     }
     type User{
       id: ID!         //exclamation point stands for non-nullable. Every user has to have an id
@@ -28,7 +28,7 @@ const schema = buildSchema(
 );
 
 const rootValue = {
-  message: () => "GraphQl works",
+  users: () => "GraphQl works",
 };
 
 graphql(
