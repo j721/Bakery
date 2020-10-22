@@ -35,7 +35,7 @@ const schema = buildSchema(
 );
 
 const rootValue = {
-  users: () => "GraphQl works",
+  users: () => db.users,
 };
 
 graphql(
