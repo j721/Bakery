@@ -42,7 +42,9 @@ graphql(
   schema,
   `
     {
-      message
+      users{
+        email
+      }
     }
   `,
   rootValue
