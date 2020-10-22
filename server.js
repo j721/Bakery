@@ -13,6 +13,13 @@ const {
 
 const app = express();
 
+const db ={
+  users: [
+    {id: '1', email: 'blue@gmail.com', name: 'Blue'},
+    {id: '2', email: 'pink@gmail.com', name: 'Pink'},
+  ]
+}
+
 const schema = buildSchema(
   ` 
     type Query{
@@ -28,17 +35,21 @@ const schema = buildSchema(
 );
 
 const rootValue = {
-  users: () => "GraphQl works",
+  users: () => db.users,
 };
 
 graphql(
   schema,
   `
     {
-      message
+      users{
+        id
+        email
+      }
     }
   `,
   rootValue
 )
-  .then(console.log)
+  .then(
+    res=>console.dir(res, {depth: null})) //print out the object users and the response
   .catch(console.error);
