@@ -51,5 +51,5 @@ graphql(
   rootValue
 )
   .then(
-    res=>console.dir(res, {depth: null}))
+    res=>console.dir(res, {depth: null})) //print out the object users and the response
   .catch(console.error);
