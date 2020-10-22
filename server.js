@@ -13,6 +13,13 @@ const {
 
 const app = express();
 
+const db ={
+  users: [
+    {id: '1', email: 'blue@gmail.com', name: 'Blue'},
+    {id: '2', email: 'pink@gmail.com', name: 'Pink'},
+  ]
+}
+
 const schema = buildSchema(
   ` 
     type Query{
