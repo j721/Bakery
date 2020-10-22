@@ -43,11 +43,13 @@ graphql(
   `
     {
       users{
+        id
         email
       }
     }
   `,
   rootValue
 )
-  .then(console.log)
+  .then(
+    res=>console.dir(res, {depth: null}))
   .catch(console.error);
